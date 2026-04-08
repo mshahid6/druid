@@ -21,7 +21,6 @@ package org.apache.druid.server.broker;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.collect.ImmutableMap;
 import org.apache.druid.common.config.Configs;
 import org.apache.druid.query.QueryContext;
 import org.apache.druid.server.QueryBlocklistRule;
@@ -71,7 +70,7 @@ public class BrokerDynamicConfig
   {
     this.queryBlocklist = Configs.valueOrDefault(queryBlocklist, Collections.emptyList());
     this.queryContext = Configs.valueOrDefault(queryContext, QueryContext.empty());
-    this.perSegmentTimeoutConfig = Configs.valueOrDefault(perSegmentTimeoutConfig, ImmutableMap.of());
+    this.perSegmentTimeoutConfig = Configs.valueOrDefault(perSegmentTimeoutConfig, Collections.emptyMap());
   }
 
   @JsonProperty
